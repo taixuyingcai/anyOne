@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans default-autowire="no" default-lazy-init="false" default-dependency-check="none">
+
+	<!-- ========================= DATA ACCESS CONTEXT ========================= -->
+
+	<!-- ========================= RESOURCE DEFINITIONS ========================= -->
+
+	<!-- Local Apache Commons DBCP DataSource that refers to a combined database -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="driverClass" value="com.mysql.jdbc.Driver" />
+		<property name="jdbcUrl">
+			<value>jdbc:mysql://commondb.fishing/fishing?characterEncoding=UTF-8&amp;autoReconnect=true</value>
+		</property>
+		<property name="user" value="root" />
+		<property name="password" value="root" />
+		<property name="maxPoolSize" value="25" />
+		<property name="minPoolSize" value="2" />
+		<property name="initialPoolSize" value="2" />
+		<property name="maxIdleTime" value="3600" />
+		<property name="checkoutTimeout" value="3000" />
+		<property name="unreturnedConnectionTimeout" value="10" />
+		<property name="debugUnreturnedConnectionStackTraces" value="true" />
+		<property name="maxStatements" value="0" />
+		<property name="idleConnectionTestPeriod" value="3600" />
+	</bean>
+	<bean id="dataSourceData" parent="dataSource" destroy-method="close">
+		<property name="jdbcUrl">
+			<value>jdbc:mysql://dataDb.fishing/fishing?characterEncoding=UTF-8&amp;autoReconnect=true</value>
+		</property>
+	</bean>
+	<bean id="dataSource0" parent="dataSource" destroy-method="close">
+		<property name="jdbcUrl">
+			<value>jdbc:mysql://db0.fishing/fishing?characterEncoding=UTF-8&amp;autoReconnect=true</value>
+		</property>
+	</bean>
+	<bean id="dataSourceUnion" parent="dataSource" destroy-method="close">
+		<property name="jdbcUrl">
+			<value>jdbc:mysql://127.0.0.1/fishing?characterEncoding=UTF-8&amp;autoReconnect=true</value>
+		</property>
+	</bean>
+	<bean id="commonDb" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref local="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					com.happysns.fishing.misc.MySqlDialectOverride
+				</prop>
+				<prop key="hibernate.show_sql">
+					false
+				</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="dataDb" parent="commonDb">
+		<property name="dataSource">
+			<ref local="dataSourceData" />
+		</property>
+	</bean>
+	<bean id="sf0" parent="commonDb">
+		<property name="dataSource">
+			<ref local="dataSource0" />
+		</property>
+	</bean>
+	<bean id="unionDb" parent="commonDb">
+		<property name="dataSource">
+			<ref local="dataSourceUnion" />
+		</property>
+	</bean>
+</beans>

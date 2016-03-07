@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-autowire="no" default-lazy-init="false" default-dependency-check="none">
+	<bean name="/gateway.fish" class="com.happysns.fishing.controller.Gateway" />
+	<bean name="/track.fish" class="com.happysns.fishing.controller.TrackController" />
+	<bean name="/index.fish" class="com.cube.pumpkin.controller.Index" />
+	<bean name="/flashIndex.fish" class="com.happysns.fishing.controller.FlashIndex" />
+	<bean name="/save-cookie.fish" class="com.happysns.fishing.controller.SaveCookie" />
+	<bean name="/help.fish" class="com.happysns.fishing.controller.Help" />
+	<bean name="/promotion.fish" class="com.happysns.fishing.controller.PromotionController" />
+	<bean name="/divButton.fish" class="com.happysns.fishing.controller.DivButton" />
+	<bean name="/flashVersion.fish" class="com.happysns.fishing.controller.FlashVersionController" />
+	<bean name="/cdkey.fish" class="com.happysns.fishing.controller.CDKeyController" />
+	<bean name="/idip.fish" class="com.happysns.fishing.controller.IDIPController" />
+	<bean name="/mobileVersion.fish" class="com.happysns.fishing.controller.MobileVersionController" />
+	<bean name="/weixin/getAuth.fish" class="com.happysns.fishing.controller.WeixinAuthController" />
+	
+
+	<bean name="/facebook/index.fish" class="com.happysns.fishing.controller.facebook.Index" />
+	<bean name="/facebook/send-feed.fish" class="com.happysns.fishing.controller.facebook.SendFeed" />
+	<bean name="/facebook/pay.fish" class="com.happysns.fishing.controller.facebook.Pay" />
+	<bean name="/facebook/switch-locale.fish" class="com.happysns.fishing.controller.facebook.SwitchLocale" />
+	<bean name="/facebook/uninstall.fish" class="com.happysns.fishing.controller.facebook.Uninstall" />
+	<bean name="/facebook/help.fish" class="com.happysns.fishing.controller.facebook.Help" />
+	<bean name="/facebook/achievement-register.fish" class="com.happysns.fishing.controller.facebook.AchievementRegister" />
+
+	<bean name="/qq/pay-info.fish" class="com.happysns.fishing.controller.qq.PayInfo" />
+	<bean name="/qq/pay-callback.fish" class="com.happysns.fishing.controller.qq.PayCallback" />
+	<bean name="/qq/get-balance.fish" class="com.happysns.fishing.controller.qq.GetBalance" />
+	<bean name="/qq/token-callback.fish" class="com.happysns.fishing.controller.qq.GetTokenCallback" />
+	<bean name="/qq/exchangePay-info.fish" class="com.happysns.fishing.controller.qq.ExchangePayInfo" />
+	<bean name="/qq/task-qualify.fish" class="com.happysns.fishing.controller.qq.TaskQualify" />
+	<bean name="/qq/task-finish.fish" class="com.happysns.fishing.controller.qq.TaskQualify" />
+	<bean name="/qq/task-market.fish" class="com.happysns.fishing.controller.qq.TaskMarket" />
+	<bean name="/activity.fish" class="com.happysns.fishing.controller.ActivityController" />
+	<bean name="/combatServer.fish" class="com.happysns.fishing.controller.CombatServerController"></bean>
+	<!-- 后台入口 -->
+	<bean name="/admin_byjr_happysns/hotel.fish" class="com.happysns.fishing.controller.admin.Hotel" />
+	<bean name="/admin_byjr_happysns/index.fish" class="com.happysns.fishing.controller.admin.Index" />
+	<bean name="/admin_byjr_happysns/login.fish" class="com.happysns.fishing.controller.admin.Login" />
+	<bean name="/admin_byjr_happysns/logout.fish" class="com.happysns.fishing.controller.admin.Logout" />
+	<bean name="/admin_byjr_happysns/system-config.fish" class="com.happysns.fishing.controller.admin.SystemConfigController" />
+	<bean name="/admin_byjr_happysns/flash-config.fish" class="com.happysns.fishing.controller.admin.FlashConfigController" />
+	<bean name="/admin_byjr_happysns/system-notice.fish" class="com.happysns.fishing.controller.admin.SystemNoticeController" />
+	<bean name="/admin_byjr_happysns/question.fish" class="com.happysns.fishing.controller.admin.QuestionController" />
+	<bean name="/admin_byjr_happysns/number.fish" class="com.happysns.fishing.controller.admin.Number" />
+	<bean name="/admin_byjr_happysns/number2.fish" class="com.happysns.fishing.controller.admin.Number2" />
+	<bean name="/admin_byjr_happysns/match.fish" class="com.happysns.fishing.controller.admin.Match" />
+	<bean name="/admin_byjr_happysns/activity.fish" class="com.happysns.fishing.controller.admin.Activity" />
+	<bean name="/admin_byjr_happysns/l10n.fish" class="com.happysns.fishing.controller.admin.L10nController" />
+	<bean name="/admin_byjr_happysns/user.fish" class="com.happysns.fishing.controller.admin.User" />
+	<bean name="/admin_byjr_happysns/news.fish" class="com.happysns.fishing.controller.admin.NewsController" />
+	<bean name="/admin_byjr_happysns/achievement-list.fish" class="com.happysns.fishing.controller.admin.AchievementList" />
+	<bean name="/admin_byjr_happysns/achievement-register.fish" class="com.happysns.fishing.controller.admin.AchievementRegister" />
+	<bean name="/admin_byjr_happysns/achievement-delete.fish" class="com.happysns.fishing.controller.admin.AchievementDelete" />
+	<bean name="/admin_byjr_happysns/combat.fish" class="com.happysns.fishing.controller.admin.CombatController"></bean>
+	<bean name="/admin_byjr_happysns/combatView.fish" class="com.happysns.fishing.controller.admin.CombatViewController"></bean>
+	 <bean name="/admin_byjr_happysns/dailyTaskCreate.fish" class="com.happysns.fishing.controller.admin.DailyTaskController"></bean>
+	 <bean name="/admin_byjr_happysns/broadcast.fish" class="com.happysns.fishing.controller.admin.BroadcastController"></bean>
+	 <bean name="/admin_byjr_happysns/mail.fish" class="com.happysns.fishing.controller.admin.MailController"></bean>
+	 <bean name="/admin_byjr_happysns/tools.fish" class="com.happysns.fishing.controller.admin.ToolsController"></bean>
+	 <bean name="/admin_byjr_happysns/mem.fish" class="com.happysns.fishing.controller.admin.MemController"></bean>
+	 <bean name="/admin_byjr_happysns/cachePreheat.fish" class="com.happysns.fishing.controller.admin.CachePreheat" />
+	 <bean name="/admin_byjr_happysns/user-broadcast.fish" class="com.happysns.fishing.controller.admin.UserBroadcastController"></bean>
+	 <bean name="/admin_byjr_happysns/mobile-config.fish" class="com.happysns.fishing.controller.admin.MobileConfigController"></bean>
+	  <bean name="/admin_byjr_happysns/chatmanager.fish" class="com.happysns.fishing.controller.admin.ChatController"></bean>
+	  <bean name="/admin_byjr_happysns/batchOpterate.fish" class="com.happysns.fishing.controller.admin.BatchOpterate"></bean>
+	  <bean name="/admin_byjr_happysns/unionSysManager.fish" class="com.happysns.fishing.controller.admin.UnionSysManager"></bean>
+	  <bean name="/admin_byjr_happysns/petSysManager.fish" class="com.happysns.fishing.controller.admin.PetSysManager"></bean>
+	  <bean name="/admin_byjr_happysns/white-list.fish" class="com.happysns.fishing.controller.admin.WhiteListController"></bean>
+	  <bean name="/admin_byjr_happysns/cdn.fish" class="com.happysns.fishing.controller.admin.CdnController"></bean>
+	<!-- ========================= VIEW DEFINITIONS ========================= -->
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass">
+			<value>org.springframework.web.servlet.view.JstlView</value>
+		</property>
+		<property name="prefix">
+			<value>/WEB-INF/jsp/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+	<!-- ========================= DEFINITIONS OF PUBLIC CONTROLLERS ========================= -->
+	<bean id="defaultHandlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
+	</bean>
+</beans>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>anyOne</display-name>
+	<welcome-file-list>
+		<welcome-file>index.fish</welcome-file>
+	</welcome-file-list>
+
+	<!-- - Loads the root application context of this web app at startup, - by default from "/WEB-INF/applicationContext.xml". 
+		- Note that you need to fall back to Spring's ContextLoaderServlet for - J2EE servers that do not follow 
+		the Servlet 2.4 initialization order. - - Use WebApplicationContextUtils.getWebApplicationContext(servletContext) 
+		- to access it anywhere in the web application, outside of the framework. - - The root context is the 
+		parent of all servlet-specific contexts. - This means that its beans are automatically available in these 
+		child contexts, - both for getBean(name) calls and (external) bean references. -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<filter>
+		<filter-name>RequestFilter</filter-name>
+		<filter-class>com.cube.pumpkin.misc.RequestFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>RequestFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>UrlRewriteFilter</filter-name>
+		<filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+		<init-param>
+			<param-name>logLevel</param-name>
+			<param-value>WARN</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>UrlRewriteFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>SetCharacterEncoding</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>SetCharacterEncoding</filter-name>
+		<url-pattern>*.fish</url-pattern>
+	</filter-mapping>
+	<!-- - Location of the XML file that defines the root application context - Applied by ContextLoaderListener. -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+            /WEB-INF/applicationContext_${env}.xml
+            /WEB-INF/dataAccessContext_${env}.xml
+        </param-value>
+	</context-param>
+	<servlet>
+		<servlet-name>core</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>core</servlet-name>
+		<url-pattern>*.fish</url-pattern>
+	</servlet-mapping>
+</web-app>

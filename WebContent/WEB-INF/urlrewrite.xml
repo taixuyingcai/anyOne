@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 2.6//EN"
+        "http://tuckey.org/res/dtds/urlrewrite2.6.dtd">
+<!-- Configuration file for UrlRewriteFilter http://tuckey.org/urlrewrite/ -->
+<urlrewrite>
+	<rule>
+		<from>^\/\?</from>
+		<to>/index.fish?</to>
+	</rule>
+	<rule>
+		<from>^\/$</from>
+		<to>/index.fish</to>
+	</rule>
+	<rule>
+		<from>^\/3366\?</from>
+		<to>/index.fish?</to>
+	</rule>
+	<rule>
+		<from>^\/3366\/$</from>
+		<to>/index.fish?</to>
+	</rule>
+	<!-- 增加3366 平台uri的动态解析，这样不需要在 core-servlet中增加bean -->
+	<rule>
+		<from>^\/3366\/(.+)</from>
+		<to>/$1</to>
+	</rule>
+</urlrewrite>
+
