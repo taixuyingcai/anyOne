@@ -8,10 +8,10 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
 
 public class Index extends AbstractController {
-	private static final Logger logger = Logger.getRootLogger();
+	private static final Logger log = Logger.getRootLogger();
 	@Override
 	protected ModelAndView handleRequestInternal(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
-		logger.debug("anyOne index ...................................");
+		log.info("anyOne index ...................................");
 		return new ModelAndView("index");
 	}
 
