@@ -3,8 +3,8 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 <beans default-autowire="no" default-lazy-init="false" default-dependency-check="none">
 	<bean name="/index.fish" class="com.cube.pumpkin.controller.Index" />
+	<bean name="/gateway.fish" class="com.cube.pumpkin.controller.Gateway" />
 	<!-- 
-	<bean name="/gateway.fish" class="com.happysns.fishing.controller.Gateway" />
 	<bean name="/track.fish" class="com.happysns.fishing.controller.TrackController" />
 	<bean name="/flashIndex.fish" class="com.happysns.fishing.controller.FlashIndex" />
 	<bean name="/save-cookie.fish" class="com.happysns.fishing.controller.SaveCookie" />

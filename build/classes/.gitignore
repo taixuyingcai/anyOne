@@ -1,3 +1,5 @@
 /GameServerLog4j.properties
 /com/
 /GameServerLog4j2.properties
+/admin/
+/User/

@@ -8,13 +8,20 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.hibernate.SessionFactory;
 
 public class RequestFilter implements Filter {
 	private static final Logger log = Logger.getRootLogger();
-
+	
+	public void setDataDb(SessionFactory session) {
+		HibernateUtil.setDb(session);
+	}
+	
 	@Override
 	public void destroy() {
 		// TODO Auto-generated method stub
@@ -22,11 +29,14 @@ public class RequestFilter implements Filter {
 	}
 
 	@Override
-	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain)
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-		// TODO Auto-generated method stub
 		log.debug("dofilter===========");
-		chain.doFilter(req, resp);
+		HttpServletRequest req = (HttpServletRequest) request;
+		HttpServletResponse resp = (HttpServletResponse) response;
+		req.setCharacterEncoding("UTF-8");
+		req.setAttribute("arg0", "abcd");
+		chain.doFilter(request, response);
 	}
 
 	@Override

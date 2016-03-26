@@ -6,14 +6,16 @@
 
 <beans default-autowire="no" default-lazy-init="false" default-dependency-check="none">
 	<bean id="defaultHandlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" />
-	<!-- bean name="hibernateFilter" class="com.cube.pumpkin.misc.RequestFilter">
-		<property name="commonDb" ref="commonDb"/>
+	<bean name="hibernateFilter" class="com.cube.pumpkin.misc.RequestFilter">
 		<property name="dataDb" ref="dataDb"/>
+		<!-- 
+		<property name="commonDb" ref="commonDb"/>
 		<property name="unionDb" ref="unionDb"/>
 		<property name="sfs">
 			<list>
 				<ref bean="sf0" />
 			</list>
 		</property>
-	</bean -->
+		 -->
+	</bean>
 </beans>

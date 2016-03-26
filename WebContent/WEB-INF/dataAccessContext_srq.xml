@@ -12,7 +12,7 @@
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
 		<property name="driverClass" value="com.mysql.jdbc.Driver" />
 		<property name="jdbcUrl">
-			<value>jdbc:mysql://127.0.0.1/fishing?characterEncoding=UTF-8&amp;autoReconnect=true</value>
+			<value>jdbc:mysql://127.0.0.1/anyOne?characterEncoding=UTF-8&amp;autoReconnect=true</value>
 		</property>
 		<property name="user" value="root" />
 		<property name="password" value="root" />
@@ -28,17 +28,17 @@
 	</bean>
 	<bean id="dataSourceData" parent="dataSource" destroy-method="close">
 		<property name="jdbcUrl">
-			<value>jdbc:mysql://127.0.0.1/fishing?characterEncoding=UTF-8&amp;autoReconnect=true</value>
+			<value>jdbc:mysql://127.0.0.1/anyOne?characterEncoding=UTF-8&amp;autoReconnect=true</value>
 		</property>
 	</bean>
 	<bean id="dataSource0" parent="dataSource" destroy-method="close">
 		<property name="jdbcUrl">
-			<value>jdbc:mysql://127.0.0.1/fishing?characterEncoding=UTF-8&amp;autoReconnect=true</value>
+			<value>jdbc:mysql://127.0.0.1/anyOne?characterEncoding=UTF-8&amp;autoReconnect=true</value>
 		</property>
 	</bean>
 	<bean id="dataSourceUnion" parent="dataSource" destroy-method="close">
 		<property name="jdbcUrl">
-			<value>jdbc:mysql://127.0.0.1/fishing?characterEncoding=UTF-8&amp;autoReconnect=true</value>
+			<value>jdbc:mysql://127.0.0.1/anyOne?characterEncoding=UTF-8&amp;autoReconnect=true</value>
 		</property>
 	</bean>
 	<bean id="commonDb" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">

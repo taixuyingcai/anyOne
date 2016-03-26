@@ -1,19 +1,17 @@
-package com.cube.pumpkin.controller;
+package com.cube.pumpkin.controller.admin;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.log4j.Logger;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
 
-public class Index extends AbstractController {
-	private static final Logger log = Logger.getRootLogger();
+public class Login extends AbstractController {
+
 	@Override
 	protected ModelAndView handleRequestInternal(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-		log.info("anyOne index ...................................");
-		log.info("arg0="+req.getAttribute("arg0"));
-		return new ModelAndView("index");
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
